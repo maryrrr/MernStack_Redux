@@ -1,0 +1,14 @@
+.form {
+    &__login {
+        
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        align-items: center;
+    &__items {
+       width:55rem;
+
+  }   
+  }
+}

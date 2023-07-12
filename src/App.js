@@ -5,11 +5,12 @@ import Login from './components/Login/Login'
 import Home from './views/Home/Home';
 import TheHeader from './components/TheHeader/TheHeader';
 import Profile from './views/Profile/Profile';
+import PostDetail from './components/Posts/PostDetail/PostDetail';
 
 function App() {
   return (
     <div className="App">
-     <h1>App</h1> 
+     
       <BrowserRouter>
       <TheHeader />
         <Routes>
@@ -17,6 +18,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={ <Login />} />
           <Route path ="/profile" element={<Profile />} />
+          <Route path="post/:id" element={<PostDetail />} />
         </Routes>
       </BrowserRouter>
     </div>

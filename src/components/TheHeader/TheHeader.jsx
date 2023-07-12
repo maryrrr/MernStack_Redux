@@ -1,7 +1,9 @@
 import React from 'react'
 import {Link,useNavigate} from 'react-router-dom'
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../features/auth/authSlice";
+import { useDispatch, useSelector } from "react-redux"
+import { logout } from "../../features/auth/authSlice"
+import { Menu,Button } from 'antd';
+import { HomeOutlined, UserAddOutlined, UserOutlined, ShoppingOutlined,UnlockOutlined } from '@ant-design/icons'
 
 const TheHeader = () => {
     const navigate = useNavigate();
@@ -14,37 +16,38 @@ const TheHeader = () => {
 
 };
   return (
-    <nav className="menu-nav">
-        <ul className='menu-nav__list'>
-          
+    <div className="header">
+        <Menu  mode="horizontal" style={{background:"grey" ,color:"white"}}>
+            <Menu.Item key="home" icon={<HomeOutlined />} >
+              <Link to='/' className='menu-nav__link'>Home</Link>
+              </Menu.Item>
           {user ?(
             <>
-            <li className='menu-nav__list-item'>
-            <button onClick={onLogout}  className='menu-nav__link'>Logout</button>
-            </li>
-            <li className='menu-nav__list-item'>
-            <Link to='/' className='menu-nav__link'>Home</Link>
-            </li>
-            <li className='menu-nav__list-item'>
-            <Link to='/profile' className='menu-nav__link'>Profile</Link>
-            </li>
+            <Menu.Item key="logout" icon={<UnlockOutlined />}>
+              <Button type="link" onClick={onLogout}>
+                  Logout
+              </Button>
+            </Menu.Item>
+            
+            <Menu.Item key="profile" icon={<UserOutlined />}>
+              <Link to="/profile">Profile</Link>
+            </Menu.Item>
 
             </>
 
           ):(
             <>
-            <li className='menu-nav__list-item'>
-            <Link to='/register' className='menu-nav__link'>Register</Link>
-            </li>
-          <li className='menu-nav__list-item'>
-            <Link to='/login' className='menu-nav__link'>Login</Link>
-            </li>
+            <Menu.Item key="register" icon={<UserAddOutlined />}>
+                <Link to="/register">Register</Link>
+            </Menu.Item>
+            <Menu.Item key="login" icon={<ShoppingOutlined />}>
+                <Link to="/login">Login</Link>
+            </Menu.Item>
             </>
 
           )}
-            
-        </ul>
-</nav>
+    </Menu>
+  </div>
   )
 }
 

@@ -3,6 +3,7 @@ import {login,reset} from '../../features/auth/authSlice'
 import { useDispatch,useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {notification} from 'antd'
+import './Login.styles.scss'
 
 
 const Login = () => {
@@ -53,6 +54,10 @@ dispatch(login(formData))
 
 return (
 
+    <div className="form__login">
+        <h3>Login</h3>
+        
+    <section className='form__items'>
     <form onSubmit={onSubmit}>
 
         <input type="email" name="email" value={email} onChange={onChange} placeholder='name'/>
@@ -60,6 +65,9 @@ return (
         <button type="submit">Login</button>
 
     </form>
+    </section>
+
+    </div>
 
 )
 

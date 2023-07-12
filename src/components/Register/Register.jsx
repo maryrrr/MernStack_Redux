@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {register,reset} from '../../features/auth/authSlice'
 import {notification} from  "antd"
+import './Register.styles.scss'
 
 
 const Register = () => {
@@ -62,6 +63,10 @@ const onSubmit = (e) => {
 
 
 return (
+        <>
+            <h3>Register</h3>
+        
+        <section className='container__form'>
 
     <form onSubmit={onSubmit}>
 
@@ -77,7 +82,9 @@ return (
         <button type="submit">Register</button>
 
     </form>
-
+    </section>
+    <div/>
+    </>
 )
 
 }

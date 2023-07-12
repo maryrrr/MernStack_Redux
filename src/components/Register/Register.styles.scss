@@ -1,0 +1,14 @@
+.container {
+    &__register {
+        
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        align-items: center;
+    &__form {
+        width:55rem;
+
+    }   
+    }
+}
