@@ -19,6 +19,13 @@ export const getById = createAsyncThunk("posts/getById", async (id) => {
     } catch (error) {
         console.error(error);
     }
+})
+export const getByName = createAsyncThunk("posts/getByName", async (title) => {
+    try {
+        return await postsService.getByName(title)
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 
@@ -40,7 +47,10 @@ builder
         state.isLoading=true
     })
     .addCase(getById.fulfilled, (state, action) => {
-        state.post = action.payload;
+        state.post = action.payload
+    })
+    .addCase(getByName.fulfilled, (state, action) => {
+        state.posts = action.payload
     })
 },
 
