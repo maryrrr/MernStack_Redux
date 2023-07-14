@@ -20,6 +20,7 @@ const getById = async (id) => {
 
 const getByName=async(title) => {
   const res = await axios.get(`${API_URL}/posts/getByTitle/${title}`)
+  console.log("getName",res.data);
   return res.data
 }
 

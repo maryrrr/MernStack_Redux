@@ -9,7 +9,7 @@ const Post = ({title,body,id}) => {
     <h1>Post</h1>
     
     <h3>
-      <Link to ={`/post/${id}`}>{title}</Link>
+      <Link to ={`/post/${id}`}> {title}</Link>
     </h3>
       <p>{body}</p>
     {/* {posts.posts.post && posts.posts.post.map((post)=>(

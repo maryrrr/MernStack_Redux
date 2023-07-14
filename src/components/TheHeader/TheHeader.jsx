@@ -2,29 +2,27 @@ import React, { useState } from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
 import { logout } from "../../features/auth/authSlice"
-
 import { Menu,Button } from 'antd';
 import { HomeOutlined, UserAddOutlined, UserOutlined, ShoppingOutlined,UnlockOutlined } from '@ant-design/icons'
 
 const TheHeader = () => {
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-    //const {text,setText}=useState()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const [text,setText]=useState()
   
-const { user } = useSelector((state) => state.auth)
-    
-const onLogout = (e) => {
-        e.preventDefault();
-        dispatch(logout());
-        navigate("/login");
-
-}
-const handleSearch = (e) =>{
-  e.preventDefault()
-  setText(e.target.value)
-  if (e.key === "Enter"){
-    //navigate(`/search/${text}`)
-      //console.log("hola",text);
+  const { user } = useSelector((state) => state.auth)
+  
+  const onLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout());
+    navigate("/login");
+  }
+  const handleSearch = (e) =>{
+    e.preventDefault()
+    setText(e.target.value)
+    if (e.key === "Enter"){
+      navigate(`/search/${text}`)
+      console.log("hola",text);
       }
   }
 
