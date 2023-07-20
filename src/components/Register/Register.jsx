@@ -54,8 +54,8 @@ const onSubmit = (e) => {
     if (password !== password2) {
         return notification.error({
         message: "Error",
-        description: "Passwords do not match",
-    });
+        description: "The passwords that you entered do not match!",
+    })
     } else {
         return dispatch(register(formData));
         }
@@ -63,30 +63,23 @@ const onSubmit = (e) => {
 
 
 return (
-        <>
-            <h3>Register</h3>
         
-        <section className='container__form'>
+    <div className='container__register'>
+    <h3 className='container__align'>Register</h3>
 
-    <form onSubmit={onSubmit}>
-
-        <input type="text" name="name" value={name} onChange={onChange} placeholder='name'/>
-        <input type="email" name="email" value={email} onChange={onChange} placeholder='email'/>
-        <input type="password" name="password" value={password} onChange={onChange} placeholder='password'/>
-        <input
-        type="password"
-        name="password2"
-        value={password2}
-        onChange={onChange}
-        />
-        <button type="submit">Register</button>
-
-    </form>
-    </section>
-    <div/>
-    </>
-)
-
-}
+    
+      <form onSubmit={onSubmit} className="container__form" >
+        
+        <input type="text" name="name" value={name} onChange={onChange} placeholder="name" className='container__items' />
+        <input type="email" name="email" value={email} onChange={onChange} placeholder="email" className='container__items' />
+        <input type="password" name="password" value={password} onChange={onChange} placeholder="password" className='container__items' />
+        <input type="password" name="password2" value={password2} onChange={onChange} placeholder="password2"className='container__items' />
+        <button type="submit" className='container__button'>Register</button>
+        
+      </form>
+    
+  </div>
+);
+};
 
 export default Register

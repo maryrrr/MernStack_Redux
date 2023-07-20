@@ -7,7 +7,7 @@ const PostDetail = () => {
   const { id } = useParams()
   const dispatch = useDispatch();
   const { post } = useSelector((state) => state.posts)
-  console.log(post);
+  //console.log(post);
 
   useEffect(() => {
     dispatch(getById(id));

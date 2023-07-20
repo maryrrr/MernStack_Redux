@@ -1,14 +1,28 @@
 .container {
     &__register {
-        
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-content: space-around;
         align-items: center;
-    &__form {
-        width:55rem;
-
-    }   
     }
-}
+    &__form{
+        display: flex;
+        flex-direction: column;
+        margin:1rem;
+        align-items: center;
+
+    }
+    &__items{
+        margin:0.5rem;
+        padding: 0.5rem;
+    }
+    &__button{
+        color:white;
+        background-color: black;
+        padding: 0.5rem;
+        
+    }
+    }
+
+

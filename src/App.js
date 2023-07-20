@@ -7,6 +7,8 @@ import TheHeader from './components/TheHeader/TheHeader';
 import Profile from './views/Profile/Profile';
 import PostDetail from './components/Posts/PostDetail/PostDetail';
 import Search from './components/Search/Search';
+import NewPost from './components/Posts/NewPost/NewPost';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -21,7 +23,9 @@ function App() {
           <Route path ="/profile" element={<Profile />} />
           <Route path="post/:id" element={<PostDetail />} />
           <Route path="/search/:postName" element={<Search />} />
+          <Route path="/newPost" element={<NewPost />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
