@@ -1,10 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import postsService from "./postsService"
 
+
+const token = JSON.parse(localStorage.getItem("token"));
 const initialState = {
     posts:[],
     isLoading:false,
-    post:{}
+    post:{},
+    token:token ? token:null
+    
 }
 export const getAll = createAsyncThunk("posts/getAll", async () => {
     try {
@@ -23,6 +27,14 @@ export const getById = createAsyncThunk("posts/getById", async (id) => {
 export const getByName = createAsyncThunk("posts/getByName", async (title) => {
     try {
         return await postsService.getByName(title)
+    } catch (error) {
+        console.error(error);
+    }
+});
+export const newPost = createAsyncThunk("posts/newPost", async (post) => {
+    console.log("newPost".post);
+    try {
+        return await postsService.newPost(post)
     } catch (error) {
         console.error(error);
     }
@@ -51,6 +63,10 @@ builder
     })
     .addCase(getByName.fulfilled, (state, action) => {
         state.posts = action.payload
+    })
+    .addCase(newPost.fulfilled, (state, action) => {
+        state.isSuccess = true
+        state.message = action.payload.message;
     })
 },
 

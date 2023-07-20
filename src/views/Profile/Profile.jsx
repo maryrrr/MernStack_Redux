@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux'
+import {Card} from 'antd'
 
 const Profile = () => {
     const user=useSelector((state)=>state.auth)
@@ -6,10 +7,12 @@ const Profile = () => {
   return (
     <>
     <h3>Profile</h3>
+    <Card className='card__profile' >
     <div key={user.user._id}>
     <p>Name:{user.user.name}</p>
     <p>Email:{user.user.email}</p>
     </div>
+    </Card>
     </>
   )
 }

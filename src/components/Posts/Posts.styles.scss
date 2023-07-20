@@ -1,0 +1,26 @@
+.container {
+    &__title{
+        text-align: center;
+        
+    }
+    &__posts{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 1rem;
+        margin: 0.5rem;
+        }
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:1rem;
+        
+
+    }
+    &__element{
+        width:25rem;
+    }
+
+}
+
