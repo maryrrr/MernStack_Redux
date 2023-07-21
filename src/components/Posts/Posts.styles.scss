@@ -4,13 +4,10 @@
         
     }
     &__posts{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
         padding: 1rem;
         margin: 0.5rem;
         }
-    &__items{
+    &__map{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -20,6 +17,9 @@
     }
     &__element{
         width:25rem;
+        border:1px solid black;
+        box-shadow: 10px 5px 5px rgb(118, 95, 95);
+        text-align: center;
     }
 
 }

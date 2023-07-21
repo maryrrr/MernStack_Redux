@@ -32,13 +32,19 @@ useEffect(() => {
       {isLoading ? (
         <Spin />
       ) : (
-        <div className="container__items">
+        <div className="container__map">
         {posts.posts.post && posts.posts.post.map((post) => (
           <div key={post._id} className='container__element' >
-            <Card >
+            {/* <Card >
               <h3 className='container__title'>{post.title}</h3>
               <p >{post.body}</p>
-            </Card>
+            </Card> */}
+            <Post 
+              key={post._id} 
+              title={post.title} 
+              body={post.body}
+              id={post._id} 
+              />
           </div>
         ))}
         </div>
@@ -48,7 +54,7 @@ useEffect(() => {
           defaultCurrent={1}
           total={24}
           onChange={(page, limit) => {
-            setCurrentPage((page - 1) * limit);
+          setCurrentPage((page - 1) * limit);
           }}
         />
       </div>

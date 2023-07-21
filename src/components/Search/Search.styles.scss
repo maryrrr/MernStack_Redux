@@ -1,0 +1,15 @@
+.container {
+    &__search {
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    &__items {
+        width: 25rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 1.5rem;
+    }
+}

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useDispatch,useSelector } from 'react-redux'
 import { getByName } from '../../features/posts/postsSlice'
 import Post from '../Posts/Post/Post'
+import './Search.styles.scss'
 
 const Search = () => {
   const {postName}=useParams()
@@ -17,21 +18,24 @@ const Search = () => {
   
 
   return (
-    <>
-    <h3>Search</h3>
+    
+    <div className='container__search'>
+    <h3 className='container__title'>Search Posts</h3>
     
     {posts
       && posts.map((post) =>(
+        <div className='container__items'>
       <Post 
         key ={post._id} 
         title={post.title} 
         body={post.body}
         id={post._id}
         />
+        </div>
         ))}
       
+      </div>
   
-  </>
   )
 }
 
