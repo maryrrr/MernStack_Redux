@@ -72,13 +72,20 @@ Using SASS
 ## Usage/Examples
 
 import React from 'react'
+
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
+
+import { useDispatch } from 'react-redux'
+
 import {newPost} from '../../../features/posts/postsSlice'
+
 import {Form,Input,Button} from 'antd'
 
+
 const CreatePost = () => {
+
     const { TextArea } = Input
+    
     const [form] = Form.useForm()
     
     const dispatch=useDispatch()
@@ -87,11 +94,14 @@ const CreatePost = () => {
     const onFinish = (values) => {
 
         dispatch(newPost(values))
-        form.resetFields();
-        //navigate('/home ')
+        
+        form.resetFields()
+        
+        
     }
 
     const onFinishFailed = (errorInfo) => {
+    
         console.log("Failed:", errorInfo);
         }
 ....
