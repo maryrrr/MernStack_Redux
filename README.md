@@ -65,8 +65,8 @@ Using SASS
 
 
 
-
-<img src="MernStack.pn"/>
+ 
+<img src="MernStack.png"/>
 
 
 
