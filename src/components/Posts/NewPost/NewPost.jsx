@@ -1,19 +1,21 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {newPost} from '../../../features/posts/postsSlice'
-import {Form,Input,Button,notification} from 'antd'
+import {Form,Input,Button} from 'antd'
 
 const CreatePost = () => {
     const { TextArea } = Input
+    const [form] = Form.useForm()
     
     const dispatch=useDispatch()
-    const navigate=useNavigate()
+    
     
     const onFinish = (values) => {
 
         dispatch(newPost(values))
-        navigate('/home ')
+        form.resetFields();
+        //navigate('/home ')
     }
 
     const onFinishFailed = (errorInfo) => {
@@ -25,7 +27,7 @@ const CreatePost = () => {
     <div className="form__login">
       <h3>Add Post</h3>
     <section className="form__items">
-        <Form onFinish={onFinish} onFinishFailed={onFinishFailed}>
+        <Form onFinish={onFinish} onFinishFailed={onFinishFailed} form={form}>
           <Form.Item
             name="title"
             rules={[

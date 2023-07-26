@@ -10,6 +10,7 @@ const Search = () => {
   const dispatch=useDispatch()
   
   const {posts}= useSelector((state)=>state.posts)
+  console.log("search",posts);
   
   useEffect(() =>{
     dispatch(getByName(postName))
@@ -22,18 +23,12 @@ const Search = () => {
     <div className='container__search'>
     <h3 className='container__title'>Search Posts</h3>
     
-    {posts
-      && posts.map((post) =>(
-        <div className='container__items'>
-      <Post 
-        key ={post._id} 
-        title={post.title} 
-        body={post.body}
-        id={post._id}
-        />
-        </div>
+    {posts.length > 0 &&
+        posts.map((post) => (
+          <div className='container__items'>
+            <Post key={post._id} title={post.title} body={post.body} id={post._id} />
+          </div>
         ))}
-      
       </div>
   
   )

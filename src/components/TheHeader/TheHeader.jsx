@@ -33,11 +33,10 @@ const TheHeader = () => {
         <Menu  mode="horizontal" style={{background:"grey" ,color:"white"}} className='container__menu'>
             <Menu.Item key="home" icon={<HomeOutlined />} >
               <Link to='/' className='container__link'>Home</Link>
-              </Menu.Item>
+            </Menu.Item>
+            
               
-        
-       
-          {user ?(
+            {user ?(
             <>
             <Menu.Item key="logout" icon={<UnlockOutlined />}>
               <Button type="link" onClick={onLogout}>
@@ -51,19 +50,7 @@ const TheHeader = () => {
             <Menu.Item key="newPost" icon={<SolutionOutlined />}>
               <Link to="/newPost">Create Post</Link>
             </Menu.Item>
-            <Menu.Item>
-            <Input 
-                style={{
-                  width: 200,
-                }}
-                className='container__search'
-                onChange={(e) => setText(e.target.value)} 
-                value={text}
-                onPressEnter={handleSearch}
-                placeholder="search"
-
-            />
-            </Menu.Item>
+            
 
             </>
 
@@ -76,11 +63,23 @@ const TheHeader = () => {
                 <Link to="/login">Login</Link>
             </Menu.Item>
             
+            
             </>
             
   
           )}
-            </Menu>
+        <Menu.Item className='margin-auto'>
+          <Input 
+              
+              className='container__search'
+              onChange={(e) => setText(e.target.value)} 
+              value={text}
+              onPressEnter={handleSearch}
+              placeholder="search"
+
+          />
+        </Menu.Item>
+    </Menu>
             
   </div> 
   

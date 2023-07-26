@@ -20,6 +20,16 @@
         border:1px solid black;
         box-shadow: 10px 5px 5px rgb(118, 95, 95);
         text-align: center;
+        
+    }
+    &__icon {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+    &__comment {
+        color: red;
     }
 
 }

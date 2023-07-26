@@ -10,7 +10,6 @@ const Post = ({title,body,id}) => {
     
     <h3>
       <Link to ={`/post/${id}`}> {title}</Link>
-      
     </h3>
       <p>{body}</p>
     </>

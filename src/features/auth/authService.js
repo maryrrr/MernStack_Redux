@@ -29,19 +29,25 @@ const logout = async () => {
         authorization: tokenLocalstorage,
     
     },
-    
-    });
-    
-    if (res.data) {
-        localStorage.clear();
-        }
-    return res.data;
-    };
+})
+}
+const getInfo=async() => {
+    const tokenLocalstorage = JSON.parse(localStorage.getItem("token"));
+    const res = await axios.get(`${API_URL}/users/getInfo/`, {
+        headers: {
+            authorization: tokenLocalstorage,
+        },
+    })
+    console.log("getInfo",res.data);
+    return res.data
+}
+
 const authService = {
     register,
     login,
     logout,
+    getInfo
 
 };
 
-export default authService;
+export default authService

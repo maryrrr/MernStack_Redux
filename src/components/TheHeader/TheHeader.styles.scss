@@ -5,7 +5,19 @@
         justify-content: space-between;
     }
     &__menu{
-        width:100%;
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items: stretch;
     }
-    
+    &__search {
+        margin:0.3rem;
+
+    }
 }
+.margin-auto {
+    margin-left: auto;
+}
+    

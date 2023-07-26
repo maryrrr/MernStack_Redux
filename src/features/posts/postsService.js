@@ -33,6 +33,44 @@ const newPost=async(postData) => {
     console.log(res.data);
     return res.data
 }
+const deletePost=async (id) =>{
+  const token = JSON.parse(localStorage.getItem("token"))
+  const res= await axios.delete(`${API_URL}/posts/deletePost/${id}`, {
+    headers: {
+      authorization: token,
+    },
+  })
+  return res.data
+}
+const update = async (post) => {
+  console.log("post",post);
+  const token = JSON.parse(localStorage.getItem("token"))
+  const res = await axios.put(API_URL + "/posts/update/"+ post.id, post.body,{
+    headers: {
+      authorization: token,
+    },
+  })
+  return res.data
+  
+  }
+  const reviews = async (post) => {
+    try {
+      if (!post || !post.id) {
+          throw new Error("Id error validation");
+      }
+      const token = JSON.parse(localStorage.getItem('token'));
+      const res = await axios.put(API_URL + "/posts/reviews/"+ post.id, post.body, {
+        headers: {
+            authorization: token,
+        },  
+    })
+      return res.data
+    } catch (error) {
+    console.error(error);
+    throw error;
+    }
+  }
+
 
 
 const postsService = {
@@ -40,5 +78,8 @@ const postsService = {
      getById,
      getByName,
      newPost,
+     deletePost,
+     update,
+     reviews
 }
 export default postsService
