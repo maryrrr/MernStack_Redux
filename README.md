@@ -134,4 +134,4 @@ npm i axios
 npm i antd
 
 <a href="https://trello.com/b/cQKYUGKF/redsocialredux">Trello</a>
-<img src="Screenshot 2023-07-27 003422.png" />
+<img src="Screenshot 2023-07-27 003422.png" alt="image" />
