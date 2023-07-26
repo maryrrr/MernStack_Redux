@@ -1,5 +1,5 @@
 
-<h1>Social network MERN</h1>
+<h3>Social network MERN</h3>
 
 A social network is being developed in which users will register, log in.
 
