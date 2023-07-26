@@ -65,7 +65,7 @@ Using SASS
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+https://github.com/maryrrr/MernStack_Redux/blob/master/MernStack.png
+![App Screenshot](https://github.com/maryrrr/MernStack_Redux/blob/master/MernStack.png
 )
 
 
