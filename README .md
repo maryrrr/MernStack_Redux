@@ -63,10 +63,10 @@ Using SASS
 
 
 
-## Screenshots
 
-![App Screenshot](https://github.com/maryrrr/MernStack_Redux/blob/master/MernStack.png
-)
+
+<img src="MernStack.pn"/>
+
 
 
 ## Usage/Examples
